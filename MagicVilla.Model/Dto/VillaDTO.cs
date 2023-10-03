@@ -15,8 +15,12 @@ namespace MagicVilla.Model.Dto
         public string FirstName { get; set; }
         [Required]
         public string LastName { get; set; }
+        [Required]
+        public double Rate { get; set; }
         public int Occupancy { get; set; }
         public int Sqft { get; set; }
-        public DateTime CreateAt { get; set; }
+        public string ImageUrl { get; set; }
+        public string Amenity { get; set; }
+     
     }
 }

@@ -1,7 +1,11 @@
+using MagicVilla.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllers().AddNewtonsoftJson();
+builder.Services.AddDbContext<ApplicationDbContext>(option => { option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));  });
+ builder.Services.AddControllers().AddNewtonsoftJson();
 
 //Log.Logger = new LoggerConfiguration()
  //   .MinimumLevel.Debug().WriteTo.File("log/villaLogs.txt", rollingInterval.Day).CreateLogger();
